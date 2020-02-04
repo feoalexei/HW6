@@ -9,10 +9,11 @@
 <body>
     <script>
 
-        var myMap = function(array, func) {
+        var myMap = function(array, callback) {
             var newArray = [];
             for (var i = 0; i < array.length; i++) {
-                newArray.push(getEnding(array[i]));
+                var callbackResult = callback(array[i]);
+                newArray.push(callbackResult);
             }
             return newArray;
         };
@@ -28,7 +29,7 @@
             } else return num + 'th';
         }
 
-        console.log(myMap([21, 2, 43, 7], getEnding));
+        console.log(myMap([1, 2, 3, 74, 6, 9], getEnding));
 
     </script>
 </body>
