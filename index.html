@@ -12,7 +12,7 @@
         var myMap = function(array, callback) {
             var newArray = [];
             for (var i = 0; i < array.length; i++) {
-                var callbackResult = callback(array[i]);
+                var callbackResult = callback(array[i], i, array);
                 newArray.push(callbackResult);
             }
             return newArray;
@@ -29,7 +29,7 @@
             } else return num + 'th';
         }
 
-        console.log(myMap([1, 2, 3, 74, 6, 9], getEnding));
+        console.log(myMap([1, 2, 3, 74], getEnding));
 
     </script>
 </body>
